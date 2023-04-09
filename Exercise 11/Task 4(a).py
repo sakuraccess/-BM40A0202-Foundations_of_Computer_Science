@@ -8,13 +8,10 @@ MAX = int(sqrt(n)) + 1
 
 for x in range(MAX):
     if found: break
-
     for y in range(x, MAX):
         left = x**2 + y**2
         
-        if left > n:
-            break
-        
+        if left > n: break
         if left == n:
             print("One solution found.")
             print("%d^2 + %d^2 = %d" % (x, y, n))
