@@ -1,0 +1,29 @@
+; FoCS_Exercise10 Task_5 
+
+; START
+0 a * * goToRight
+0 b * * halt-Reject
+0 _ * r Special
+
+; Special
+Special _ * * halt-Accept
+
+; State goToRight
+goToRight a * r goToRight
+goToRight b * r goToRight
+goToRight _ * l findRight
+
+; State findRight
+findRight b _ l goToLeft
+findRight a * * halt-Reject
+findRight _ * * halt-Accept
+
+; State goToLeft
+goToLeft a * l goToLeft
+goToLeft b * l goToLeft
+goToLeft _ * r findLeft
+
+; State findLeft
+findLeft a _ r goToRight
+findLeft b * * halt-Reject
+findLeft _ * * halt-Reject

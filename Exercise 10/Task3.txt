@@ -1,0 +1,18 @@
+; FoCS_Exercise10 Task_3
+; Turing machine program
+; Run on https://morphett.info/turing/turing.html
+
+; State 0 
+0 _ _ l 0 
+0 0 1 l 1 
+0 1 0 l 1 
+
+; State 1 
+1 0 1 l 1 
+1 1 0 l 1 
+1 _ _ r 2 
+
+; State 2 
+2 0 0 r 2 
+2 1 1 r 2 
+2 _ _ * halt-accept 
